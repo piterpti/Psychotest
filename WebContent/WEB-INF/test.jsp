@@ -18,9 +18,13 @@
     <jsp:include page="fragment/navbar.jspf" />
     
     <div class="container">
-    	<h1>Sprawdź swoją osobowość <small>przy pomocy naszego testu i przekonaj się jaki zawód najlepiej pasuje do Ciebie!</small></h1>
-    	<h3><a href="test">Przejdź do testu</a></h3>
+    	<h2>Za chwilę rozpoczniesz test osobowości</h2>
+    	<p>Aby uzyskać jak najlepszy wynik odpowiadaj szczerze - przemyśl swoje odpowiedzi - nie jest to wyścig z czasem ;)</p>
+    	<a href="question">Rozpocznij test</a>
+    	
     </div>
+    
+    
      
     <jsp:include page="fragment/footer.jspf" />
      

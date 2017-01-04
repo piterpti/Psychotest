@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Psychotest</title>
+    <title>Błąd 404</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css" type="text/css" rel="stylesheet">
@@ -18,8 +18,7 @@
     <jsp:include page="fragment/navbar.jspf" />
     
     <div class="container">
-    	<h1>Sprawdź swoją osobowość <small>przy pomocy naszego testu i przekonaj się jaki zawód najlepiej pasuje do Ciebie!</small></h1>
-    	<h3><a href="test">Przejdź do testu</a></h3>
+    	<h1>Błąd 404<small> - niestety nie odnaleziono podanego adresu</small></h1>
     </div>
      
     <jsp:include page="fragment/footer.jspf" />

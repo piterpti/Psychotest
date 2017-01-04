@@ -9,17 +9,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css" type="text/css" rel="stylesheet">
      <link href="${pageContext.request.contextPath}/resources/css/styles.css" type="text/css" rel="stylesheet">
-  
   </head>
- 
   <body>
-  
      
     <jsp:include page="fragment/navbar.jspf" />
     
     <div class="container">
-    	<h1>Sprawdź swoją osobowość <small>przy pomocy naszego testu i przekonaj się jaki zawód najlepiej pasuje do Ciebie!</small></h1>
-    	<h3><a href="test">Przejdź do testu</a></h3>
+    	<h1>Pytanie 1</h1>
+    	<p>Tresc pytania</p>
     </div>
      
     <jsp:include page="fragment/footer.jspf" />
