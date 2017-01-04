@@ -1,7 +1,11 @@
 package model;
 
-public class Question {
+import java.io.Serializable;
 
+public class Question implements Serializable {
+
+	private static final long serialVersionUID = 1L;
+	
 	private int id;
 	
 	public enum QuestionType {
@@ -10,6 +14,7 @@ public class Question {
 	
 	private QuestionType questionType;
 	private String text;
+	private int userRate;
 	
 	public Question(int id, QuestionType questionType, String text) {
 		super();
@@ -43,4 +48,12 @@ public class Question {
 	public void setText(String text) {
 		this.text = text;
 	}
+
+	public int getUserRate() {
+		return userRate;
+	}
+
+	public void setUserRate(int userRate) {
+		this.userRate = userRate;
+	}	
 }
