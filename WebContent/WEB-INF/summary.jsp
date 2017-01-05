@@ -2,7 +2,10 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<% String model = (String)request.getAttribute("model"); %>
+<%@page import="model.Reply"%>
+
+<% Reply model = (Reply)request.getAttribute("model"); %> 
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -21,7 +24,11 @@
     
     <div class="container">
     	<h2>Podsumowanie testu</h2>
-    	<h3>Twój profil osobowości to <%=model %></h3>
+    	<h3>Twój profil osobowości to <%=model.getReplyId() %></h3>
+    	<p><%=model.getName() %> - zawody: <%=model.getProffesions() %></p>
+    	<br> <%=model.getDescription() %> 
+    	<br><br>
+   	   	<a href="index">Powrót do strony głównej</a>
     </div>
      
     <jsp:include page="fragment/footer.jspf" />

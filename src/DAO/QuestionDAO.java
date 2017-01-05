@@ -95,6 +95,7 @@ public class QuestionDAO extends MainDAO {
 				nsQuestions.add(q);
 			}
 			rs.close();
+			stmt.close();
 		} catch (SQLException e) {
 			e.printStackTrace();
 			return null;

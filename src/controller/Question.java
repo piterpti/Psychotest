@@ -9,7 +9,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import DAO.QuestionDAO;
+import DAO.ReplyDAO;
 import model.Question.QuestionType;
+import model.Reply;
 
 import java.util.*;
 
@@ -80,7 +82,11 @@ public class Question extends HttpServlet {
 			}
 			
 			if (end) {
-				String model = calculatePersonalityProfile(allQuestions);
+				Reply model = calculatePersonalityProfile(allQuestions);
+				if (model == null) {
+					// error
+					req.getRequestDispatcher("WEB-INF/index.jsp").forward(req, resp);
+				}
 				req.setAttribute(TAG_MODEL, model);
 				session.setAttribute("end", true);
 				req.getRequestDispatcher("WEB-INF/summary.jsp").forward(req, resp);
@@ -90,7 +96,7 @@ public class Question extends HttpServlet {
 		}
 	}
 	
-	private String calculatePersonalityProfile(ArrayList<model.Question> questions) {
+	private Reply calculatePersonalityProfile(ArrayList<model.Question> questions) {
 		int ei = 0;;
 		int eiQuestionsCount = 0;
 		
@@ -138,6 +144,12 @@ public class Question extends HttpServlet {
 			personalityModel += "I";
 		}
 		
+		if (10 * nsQuestionCount / 2 > ns) {
+			personalityModel += "N";
+		} else {
+			personalityModel += "S";
+		}
+		
 		if (10 * ftQuestionsCount / 2 > ft) {
 			personalityModel += "F";
 		} else {
@@ -150,12 +162,11 @@ public class Question extends HttpServlet {
 			personalityModel += "P";
 		}
 		
-		if (10 * nsQuestionCount / 2 > ns) {
-			personalityModel += "N";
-		} else {
-			personalityModel += "S";
-		}
-		return personalityModel;
+		personalityModel = personalityModel.toLowerCase();
+		
+		ReplyDAO dao = new ReplyDAO();
+		
+		return dao.getReply(personalityModel);
 	}
 	
 	private boolean isEnd(HttpSession sess) {
