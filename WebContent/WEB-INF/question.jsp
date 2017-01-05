@@ -7,6 +7,7 @@
 
 <% ArrayList<Question> questions = (ArrayList<Question>)session.getAttribute("questions"); %> 
 <% int current = (int)session.getAttribute("questionNo"); %>
+<% int questionCount = questions.size();%>
 <!DOCTYPE html>
 <html>
   <head>
@@ -21,7 +22,7 @@
     <jsp:include page="fragment/navbar.jspf" />
     
     <div class="container">
-    	<h1>Pytanie <%=current %></h1>
+    	<h1>Pytanie <%=current %>/<%=questionCount %></h1>
     	<% session.setAttribute("questionNo", current); %>
     	<p><%= questions.get(current-1).getText() %></p>
     	<form action="question" method="post">
