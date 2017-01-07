@@ -70,6 +70,7 @@ public class PsychotestJunitTest extends TestCase {
 		}
 		
 		assertEquals(testsNumber, allAnswers);
+		System.out.println("All answers: " + allAnswers);
 	}
 	
 	private Reply calculatePersonalityProfile(ArrayList<model.Question> questions) {

@@ -28,7 +28,7 @@
             <img src="resources/images/2016-05-26.jpg" alt="...">
             <div class="caption">
               <h3 style="text-align: center;">Piter</h3>
-              <p class="text-justify">Główny programista i pedofil xD (zdjęcie prawdziwe, on ma taki krzywy ryjek)</p>
+              <p class="text-justify">Główny programista - JavaEE + JDBC/SQL</p>
             </div>
           </div>
         </div>
@@ -37,7 +37,7 @@
             <img src="resources/images/pic01.jpg" alt="...">
             <div class="caption">
               <h3 style="text-align: center;">Damian</h3>
-              <p class="text-justify">Młody, jeszcze nie wie, że Piter chce go wykorzystać</p>
+              <p class="text-justify">Projektant bazy danych - SQLite3</p>
             </div>
           </div>
         </div>
@@ -46,7 +46,7 @@
             <img src="resources/images/pic01.jpg" alt="...">
             <div class="caption">
               <h3 style="text-align: center;">Katarzyna</h3>
-              <p class="text-justify">Och, najwspanialszy członek zespołu. Same zalety, długo by wypisywać xD</p>
+              <p class="text-justify">Frontend HTML/CSS3/Bootstrap</p>
             </div>
           </div>
         </div>
