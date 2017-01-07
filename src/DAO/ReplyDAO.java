@@ -39,5 +39,33 @@ public class ReplyDAO extends MainDAO{
 		
 		return null;
 	}
+	
+	public ArrayList<Reply> getReplies() {
+		ArrayList<Reply> replies = new ArrayList<>();
+		
+		Statement stmt = createStatement();
+		String sql = "SELECT * FROM " + TABLE_REPLY + ";";
+		
+		try {
+			ResultSet rs = stmt.executeQuery(sql);
+			Reply reply = null;
+			while (rs.next()) {
+				reply = new Reply();
+				reply.setReplyId(rs.getString("IdReply").toUpperCase());
+				reply.setName(rs.getString("Name"));
+				reply.setDescription(rs.getString("Description"));
+				reply.setProffesions(rs.getString("Professions"));
+				replies.add(reply);
+			}
+			
+			rs.close();
+			stmt.close();
+			
+			return replies;
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
 
 }

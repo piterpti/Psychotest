@@ -49,6 +49,7 @@ public class Question extends HttpServlet {
 		return dao.getAllQuestion(QuestionType.ALL);
 	}
 	
+	@SuppressWarnings("unchecked")
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String questionRate = req.getParameter("rate");

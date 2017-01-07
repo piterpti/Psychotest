@@ -1,6 +1,5 @@
 package DAO;
 
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -101,14 +100,28 @@ public class QuestionDAO extends MainDAO {
 			return null;
 		}
 		
-		ArrayList<Question> allQuestions = new ArrayList<>();
-		allQuestions.addAll(eiQuestions);
-		allQuestions.addAll(ftQuestions);
-		allQuestions.addAll(jpQuestions);
-		allQuestions.addAll(nsQuestions);
-		Collections.shuffle(allQuestions);
+		switch (type) {
+		case ALL:
+			ArrayList<Question> allQuestions = new ArrayList<>();
+			allQuestions.addAll(eiQuestions);
+			allQuestions.addAll(ftQuestions);
+			allQuestions.addAll(jpQuestions);
+			allQuestions.addAll(nsQuestions);
+			Collections.shuffle(allQuestions);
+			return allQuestions;
+		case EI:
+			return eiQuestions;
+		case FT:
+			return ftQuestions;
+		case JP:
+			return jpQuestions;
+		case NS:
+			return nsQuestions;
 		
-		return allQuestions;
+		default:
+			// illegal argument - impossible in this case..
+			return null;
+		}
 	}
 	
 }

@@ -10,6 +10,7 @@ public class Reply implements Serializable {
 	private String name;
 	private String description;
 	private String proffesions;
+	private int counter = 0; // only for tests!
 	
 	public Reply(){}
 
@@ -51,5 +52,40 @@ public class Reply implements Serializable {
 
 	public void setProffesions(String proffesions) {
 		this.proffesions = proffesions;
-	}	
+	}
+	
+	public int getCounter() {
+		return counter;
+	}
+
+	public void setCounter(int counter) {
+		this.counter = counter;
+	}
+	
+	public void incCounter() {
+		counter++;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if(obj instanceof Reply) {
+			Reply reply = (Reply) obj;
+			if(reply.getReplyId().equals(replyId)) {
+				return true;
+			} else {
+				return false;
+			}
+		} else {
+			return false;
+		} 
+	}
+
+	@Override
+	public String toString() {
+		return "Reply [replyId=" + replyId + ", counter=" + counter + "]";
+	}
+	
+	
+	
+	
 }

@@ -14,7 +14,7 @@ public class MainDAO {
 		conn = SQLiteJDBC.getInstance().getConnection();
 	}
 	
-	public Statement createStatement() {
+	protected Statement createStatement() {
 		try {
 			
 		return conn.createStatement();
