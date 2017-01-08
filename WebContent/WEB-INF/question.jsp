@@ -56,7 +56,7 @@
 	    }
 	    else
 	    {
-	        alert('Nie zaznaczono żadnej odwpoiedzi');
+	        alert('Nie zaznaczono żadnej odpowiedzi');
 	        return false;
 	    }
 	}

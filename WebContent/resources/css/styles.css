@@ -18,3 +18,7 @@ body {
 .footer, .push {
     height: 50px; /* .push must be the same height as .footer */
 }
+
+.footer {
+	background-color: #f5f5f5;
+}
