@@ -7,8 +7,10 @@
     <title>Doradca sprzętowy</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css" type="text/css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/resources/css/styles.css" type="text/css" rel="stylesheet">
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
     
   </head>
  
@@ -27,8 +29,8 @@
           <div class="thumbnail">
             <img src="resources/images/2016-05-26.jpg" alt="...">
             <div class="caption">
-              <h3 style="text-align: center;">Piter</h3>
-              <p class="text-justify">Główny programista - JavaEE + JDBC/SQL</p>
+              <h3 style="text-align: center;">Piotr Łukasik</h3>
+              <p class="text-justify">Główny programista - Java/SQL</p>
             </div>
           </div>
         </div>
@@ -36,7 +38,7 @@
           <div class="thumbnail">
             <img src="resources/images/pic01.jpg" alt="...">
             <div class="caption">
-              <h3 style="text-align: center;">Damian</h3>
+              <h3 style="text-align: center;">Damian Kurek</h3>
               <p class="text-justify">Projektant bazy danych - SQLite3</p>
             </div>
           </div>
@@ -45,7 +47,7 @@
           <div class="thumbnail">
             <img src="resources/images/pic01.jpg" alt="...">
             <div class="caption">
-              <h3 style="text-align: center;">Katarzyna</h3>
+              <h3 style="text-align: center;">Katarzyna Krzemińska</h3>
               <p class="text-justify">Frontend HTML/CSS3/Bootstrap</p>
             </div>
           </div>
