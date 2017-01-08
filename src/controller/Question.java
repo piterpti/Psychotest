@@ -53,7 +53,14 @@ public class Question extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String questionRate = req.getParameter("rate");
-		int userRate = Integer.valueOf(questionRate);
+		req.removeAttribute("rate");
+		int userRate;
+		try {
+			userRate = Integer.valueOf(questionRate);
+		} catch (NumberFormatException e) {
+			req.getRequestDispatcher("WEB-INF/question.jsp").forward(req, resp);
+			return;
+		}
 		
 		HttpSession session = req.getSession();
 		if (isEnd(session)) {
@@ -70,7 +77,7 @@ public class Question extends HttpServlet {
 				} else {
 					int counter = 1;
 					for (model.Question question : allQuestions) {
-						if (question.getUserRate() > 0) {
+						if (question.getUserRate() >= 0) {
 							counter++;
 							continue;
 						}

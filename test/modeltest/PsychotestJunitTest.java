@@ -35,7 +35,7 @@ public class PsychotestJunitTest extends TestCase {
 			
 			// random answers
 			for (Question q : questions) {
-				int answer = generator.nextInt(10) + 1;
+				int answer = generator.nextInt(11);
 				q.setUserRate(answer);
 			}
 			

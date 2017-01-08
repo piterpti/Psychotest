@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 public class Question implements Serializable {
 
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 2L;
 	
 	private int id;
 	
@@ -14,7 +14,7 @@ public class Question implements Serializable {
 	
 	private QuestionType questionType;
 	private String text;
-	private int userRate;
+	private int userRate = -1;
 	
 	public Question(int id, QuestionType questionType, String text) {
 		super();

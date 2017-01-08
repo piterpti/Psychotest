@@ -19,6 +19,49 @@
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
   </head>
+  
+  <style>
+	 input[type=radio] {
+	    display: block;
+	    margin: 0 auto;
+	    padding: 10px;
+	}
+	label {
+	    display: inline-block;
+	    padding-right: 20px;
+	}
+	#send {
+		margin-top 10px;
+		padding-left: 50px;
+		padding-right: 50px
+	}
+
+  </style>
+  
+  <script type="text/javascript">
+	function validateRadio (radios)
+	{
+	    for (i = 0; i < radios.length; ++ i)
+	    {
+	        if (radios [i].checked) return true;
+	    }
+	    return false;
+	}
+	
+	function validateForm()
+	{
+	    if(validateRadio (document.forms["answer"]["rate"]))
+	    {
+	        return true;
+	    }
+	    else
+	    {
+	        alert('Nie zaznaczono żadnej odwpoiedzi');
+	        return false;
+	    }
+	}
+</script>
+  
   <body>
      
     <jsp:include page="fragment/navbar.jspf" />
@@ -27,20 +70,24 @@
     	<h1>Pytanie <%=current %>/<%=questionCount %></h1>
     	<% session.setAttribute("questionNo", current); %>
     	<p><%= questions.get(current-1).getText() %></p>
-    	<form action="question" method="post">
-    	<select name="rate">
-	    	<% for(int i = 1; i < 11; i++) { %>
-			   <option value=<%=i%>><%=i%></option> 
-		    <% } %>
-		</select>
-		<input type="submit" value="Dalej">
-		</form>
-		<br>
     	<p>Twoja odpowiedź:</p>
+    	
+    	<form action="question" method="post" name="answer" onsubmit="return validateForm()">
+    	<% for(int i = 0; i < 11; i++) { %>
+			    
+			<label><input type="radio" name="rate" value=<%=i %> /><%=i %></label>
+				
+	    <% } %>
+	    <br>
+	    <input id="send" type="submit" value="Dalej">
+	    </form>
+	    <br>
+	    Odpowiedź oznacza:
     	<ul>
-	    	<li>1 - nie zgadzam się całkowicie</li>
+	    	<li>0 - nie zgadzam się całkowicie</li>
 	    	<li>10 - zgadzam się całkowicie</li>
     	</ul>
+    	
     </div>
      
     <jsp:include page="fragment/footer.jspf" />
